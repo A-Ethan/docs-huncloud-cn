@@ -29,7 +29,7 @@ jobs:
     - name: gitbook install
       run: gitbook install
     - name: gitbook build
-      run: gitbook gitbook build ./ ./docs
+      run: gitbook build ./ ./docs
     # 设置阿里云OSS的 id/secret，存储到 github 的 secrets 中
     - name: setup aliyun oss
       uses: A-Ethan/setup-ossutil@master
