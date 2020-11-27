@@ -82,7 +82,7 @@
         },
         "prism": {
             "css": [
-              "prismjs/themes/prism-vsc-dark-plus.css"
+              "https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-vsc-dark-plus.css"
             ]
           }
     }
