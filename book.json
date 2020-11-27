@@ -1,6 +1,6 @@
 {
     "title": "伊桑老师的文档",
-    "author": "Ethan.shen",
+    "author": "Ethan.Shen",
     "description": "伊桑老师的文档",
     "language": "zh-hans",
     "gitbook": "3.2.3",
@@ -22,8 +22,8 @@
         "github-buttons",
         "sharing-plus",
         "anchor-navigation-ex",
-        "favicon",
-        "code"
+        "favicon-absolute",
+        "copy-code-button"
     ],
     "pluginsConfig": {
         "github": {
@@ -58,21 +58,17 @@
             "weibo": false,
             "whatsapp": false,
             "all": [
-                "google", "facebook", "weibo", "twitter","linkedin"
+                "google","facebook","weibo","twitter","linkedin"
             ]
         },
         "anchor-navigation-ex": {
             "showLevel": false
         },
-        "favicon":{
-            "default": "./source/images/favicon.ico",
-            "shortcut": "./source/images/favicon.ico",
+        "favicon-absolute":{
+            "favicon": "./source/images/favicon.ico",
             "bookmark": "./source/images/favicon.ico",
-            "appleTouch": "./source/images/apple-touch-icon.jpg",
-            "appleTouchMore": {
-                "120x120": "./source/images/apple-touch-icon.jpg",
-                "180x180": "./source/images/apple-touch-icon.jpg"
-            }
+            "appleTouchIcon152": "./source/images/favicon.png",
+            "appleTouchIconPrecomposed152": "./source/images/favicon.png"
         }
     }
 }
