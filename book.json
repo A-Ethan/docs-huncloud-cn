@@ -67,8 +67,8 @@
             "showLevel": false
         },
         "favicon-absolute":{
-            "favicon": "/soure/images/favicon.ico",
-            "bookmark": "/soure/images/favicon.ico",
+            "favicon": "/images/favicon.ico",
+            "bookmark": "/images/favicon.ico",
             "appleTouchIcon152": "/apple-touch-icon-152.png",
             "appleTouchIconPrecomposed152": "/apple-touch-icon-precomposed-152.png",
             "appleTouchIconMore": {
@@ -82,7 +82,7 @@
         },
         "prism": {
             "css": [
-              "PrismJS/prism-themes/prism-vsc-dark-plus.css"
+              "/css/prism-vsc-dark-plus.css"
             ]
           }
     }
