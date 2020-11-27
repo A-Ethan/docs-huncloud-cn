@@ -82,7 +82,7 @@
         },
         "prism": {
             "css": [
-              "../../css/prism-vsc-dark-plus.css"
+              "../../css/prism-coldark-cold.css"
             ]
           }
     }
