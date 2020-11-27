@@ -65,8 +65,8 @@
             "showLevel": false
         },
         "favicon-absolute":{
-            "favicon": "/source/images/favicon.ico",
-            "bookmark": "/source/images/favicon.ico",
+            "favicon": "/soure/images/favicon.ico",
+            "bookmark": "/soure/images/favicon.ico",
             "appleTouchIcon152": "/apple-touch-icon-152.png",
             "appleTouchIconPrecomposed152": "/apple-touch-icon-precomposed-152.png",
             "appleTouchIconMore": {
