@@ -28,7 +28,7 @@ $@
 
 ## Dockerfile
 
-```Dockerfile
+```dockerfile
 FROM uhub.service.ucloud.cn/hello123/centos:7.8.2003　 
 RUN yum -y install openssh-server;yum clean all
 RUN mkdir /var/run/sshd && \
