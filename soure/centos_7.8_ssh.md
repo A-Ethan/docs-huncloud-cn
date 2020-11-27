@@ -2,7 +2,7 @@
 
 ## 命令
 
-```shell
+```bash
 # build 镜像
 docker build . -t=<image:tag>
 # run 容器

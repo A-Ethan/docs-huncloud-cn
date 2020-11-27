@@ -11,9 +11,7 @@
         "readme": "README.md"
     },
     "links": {
-        "sidebar": {
-            // "伊桑老师的文档": "./"
-        }
+        "sidebar": {}
     },
     "plugins": [
         "-sharing",
