@@ -1,6 +1,6 @@
 # Deployment
 
-直接用
+## 直接用
 
 ```yaml
 apiVersion: apps/v1
