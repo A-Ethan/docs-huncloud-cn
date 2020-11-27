@@ -15,6 +15,7 @@
     },
     "plugins": [
         "-sharing",
+        "prism",
         "splitter",
         "expandable-chapters-small",
         "anchors",
