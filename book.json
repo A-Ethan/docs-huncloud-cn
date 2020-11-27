@@ -82,7 +82,7 @@
         },
         "prism": {
             "css": [
-              "prismjs/themes/prism-okaidia.css"
+              "PrismJS/prism-themes/prism-vsc-dark-plus.css"
             ]
           }
     }
