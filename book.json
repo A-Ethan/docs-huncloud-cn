@@ -14,8 +14,8 @@
         "sidebar": {}
     },
     "plugins": [
-        "-sharing",
-        "prism",
+        "sharing",
+        "-prism",
         "splitter",
         "expandable-chapters-small",
         "anchors",
