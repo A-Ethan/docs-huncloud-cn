@@ -1,5 +1,5 @@
 {
-    "title": "Kubernetes",
+    "title": "伊桑老师的文档",
     "author": "Ethan.shen",
     "description": "伊桑老师的文档",
     "language": "zh-hans",
@@ -65,8 +65,9 @@
             "showLevel": false
         },
         "favicon":{
-            "shortcut": "./source/images/favicon.png",
-            "bookmark": "./source/images/favicon.png",
+            "default": "./source/images/favicon.ico",
+            "shortcut": "./source/images/favicon.ico",
+            "bookmark": "./source/images/favicon.ico",
             "appleTouch": "./source/images/apple-touch-icon.jpg",
             "appleTouchMore": {
                 "120x120": "./source/images/apple-touch-icon.jpg",
