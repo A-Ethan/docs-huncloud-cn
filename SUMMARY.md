@@ -9,6 +9,7 @@
 ## Docker
 
 * [CentOS 7.8 ssh](./docker/centos_7.8_ssh.md)
+* [Golang](./docker/golang.md)
 
 ## Kubernetes
 
