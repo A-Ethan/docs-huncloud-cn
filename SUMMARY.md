@@ -5,15 +5,15 @@
 ## devops
 
 * [Github Action](./devops/github_action.md)
-* [gitlab runner(待整理)]()
-* [jenkins(待整理)]()
+* [Gitlab runner(待整理)](./devops/gitlab_runner.md)
+* [Jenkins(待整理)](./devops/jenkins.md)
 
 ## Docker
 
 * [Docker环境](./docker/install_docker.md)
 * [CentOS 7.8 ssh](./docker/centos_7.8_ssh.md)
 * [Golang](./docker/golang.md)
-* [python(待整理)]()
+* [Python(待整理)](./docker/python.md)
 * [Java](./docker/java.md)
 * [多进程容器镜像](./docker/multi_process.md)
 
@@ -30,9 +30,9 @@
 * [ingress获取访客真实IP](./kubernetes/ingress_realip.md)
 * [Ingress回写(待整理)](./kubernetes/ingress_rewrite.md)
 * [使用镜像仓库](./kubernetes/secret_docker_registry.md)
-* [service命名规范(待整理)]()
+* [service命名规范(待整理)](./kubernetes/service_standard.md)
 * [CKA考试(待整理)](./kubernetes/cka.md)
 * [kubectl常用命令(待整理)](./kubernetes/kubectl_common.md)
 * [驱逐、禁用、恢复节点(待整理)](./kubernetes/drain_cordon.md)
-* [污点、容忍污点(待整理)]()
+* [污点、容忍污点(待整理)](./kubernetes/taints_tolerations.md)
 * [helm常用命令(待整理)](./kubernetes/helm.md)
