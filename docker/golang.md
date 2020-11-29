@@ -1,4 +1,4 @@
-# Golang demo
+# Golang Demo
 
 github: https://github.com/A-Ethan/golang-demo
 
@@ -8,7 +8,7 @@ github: https://github.com/A-Ethan/golang-demo
 # clone
 git clone https://github.com/A-Ethan/golang-demo.git
 # build
-docker build . -t=<image:tag>
+docker build -f Dockerfile -t=<image:tag>
 ```
 
 ## Dockerfile

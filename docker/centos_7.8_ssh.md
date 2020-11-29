@@ -4,7 +4,7 @@
 
 ```bash
 # build 镜像
-docker build . -t=<image:tag>
+docker build -f Dockerfile -t=<image:tag>
 # run 容器
 docker run -d -p 22:22 -name centos7ssh -e PASSWD=youpassword <image:tag>
 ```
