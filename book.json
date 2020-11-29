@@ -19,7 +19,7 @@
         "prism",
         "splitter",
         "expandable-chapters-small",
-        "anchors",
+        "-anchors",
         "github",
         "github-buttons",
         "sharing-plus",

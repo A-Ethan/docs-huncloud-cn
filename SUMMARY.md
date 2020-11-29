@@ -17,3 +17,6 @@
 * [ConfigMap修改nginx端口](./kubernetes/deployment_configmap.md)
 * [DaemonSet暴露hostPort](./kubernetes/hostport_daemonset.md)
 * [PVC Deployment](./kubernetes/pvc_deployment.md)
+* [Node节点Pod控制](./kubernetes/kubelet_maxpod.md)
+* [节点亲和性](./kubernetes/node_affinity.md)
+* [pod亲和性和反亲和性](./kubernetes/pod_affinity.md)
