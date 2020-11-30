@@ -7,6 +7,9 @@
 * [Github Action](./devops/github_action.md)
 * [Gitlab runner(待整理)](./devops/gitlab_runner.md)
 * [Jenkins(待整理)](./devops/jenkins.md)
+<!-- * [Harbor]() -->
+<!-- * [kubesphere]() -->
+<!-- * [openshift]() -->
 
 ## Docker
 
@@ -23,6 +26,7 @@
 * [基于CPU内存的HPA](./kubernetes/hpa_cpu_mem.md)
 * [ConfigMap修改nginx端口](./kubernetes/deployment_configmap.md)
 * [DaemonSet暴露hostPort](./kubernetes/hostport_daemonset.md)
+<!-- * [subPathExpr变量引用]() -->
 * [PVC Deployment](./kubernetes/pvc_deployment.md)
 * [Node节点Pod控制](./kubernetes/kubelet_maxpod.md)
 * [节点亲和性](./kubernetes/node_affinity.md)
