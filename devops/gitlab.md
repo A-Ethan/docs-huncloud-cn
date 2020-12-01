@@ -2,6 +2,8 @@
 
 ## git 命令
 
+![](./images/bg2015120901.png)
+
 自己常用的也就这些了
 
 ```bash
@@ -11,6 +13,7 @@ git config --global user.email "200839608@qq.com"
 
 # git clone
 git clone http://github.com/a-ethan/docs-huncloud-cn.git
+
 # git clone password
 git clone http://200839608%40qq.com:password@github.com/a-ethan/docs-huncloud-cn.git
 
