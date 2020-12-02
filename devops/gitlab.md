@@ -41,3 +41,7 @@ git checkout master
 # 合并指定分支到当前分支
 git merge v1
 ```
+
+## gitlab安装
+
+[cat yaml](./../yaml/gitlab.yaml)
