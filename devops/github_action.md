@@ -2,12 +2,25 @@
 
 ## 本文档自动流水线
 
+git -> github -> github action -> aliyun oss -> cdn*
+
 ```yaml
 name: publish_build_gitbook_image
 on: 
   push: #推送
     branches: #分支
     - main
+    paths:
+    - 'SUMMARY.md'
+    - 'book.json'
+    - '.github/workflows/publish_build_gitbook_image.yaml'
+  pull_request:
+    branches:
+    - main
+    paths:
+    - 'SUMMARY.md'
+    - 'book.json'
+    - '.github/workflows/publish_build_gitbook_image.yaml'
 jobs:
   build:
     runs-on: ubuntu-18.04
