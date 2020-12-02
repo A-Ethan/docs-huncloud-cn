@@ -44,4 +44,4 @@ git merge v1
 
 ## gitlab安装
 
-[cat yaml](./../yaml/gitlab.yaml)
+[cat yaml](github.com/a-ethan/docs-huncloud-cn/yaml/gitlab.yaml)
