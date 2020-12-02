@@ -7,13 +7,13 @@ git -> github -> github action -> aliyun oss -> cdn*
 ```yaml
 name: publish_build_gitbook_image
 on: 
-  push: #推送
-    branches: #分支
+  push:
+    branches:
     - main
     paths:
-    - 'SUMMARY.md'
-    - 'book.json'
-    - '.github/workflows/publish_build_gitbook_image.yaml'
+    - 'SUMMARY.md' # 目录
+    - 'book.json' # 插件
+    - '.github/workflows/publish_build_gitbook_image.yaml' # 流水线
   pull_request:
     branches:
     - main
