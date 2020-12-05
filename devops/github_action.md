@@ -39,7 +39,9 @@ jobs:
     # git clone
     - uses: srt32/git-actions@v0.0.3
       with:
-        args: git clone https://github.com/A-Ethan/docs-huncloud-cn.git  #git clone 该去掉
+        # git clone 
+        # 貌似和gitlab-ci不同，需要clone
+        args: git clone https://github.com/A-Ethan/docs-huncloud-cn.git
     # cd 
     - name: cd ./docs-huncloud-cn
       run: cd ./docs-huncloud-cn
