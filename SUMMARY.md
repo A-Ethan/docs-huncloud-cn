@@ -6,7 +6,8 @@
 
 * [Github Action](./devops/github_action.md)
 * [Gitlab 命令](./devops/gitlab.md)
-* [Gitlab runner(待整理)](./devops/gitlab_runner.md)
+* [Gitlab-CI/CD](./devops/gitlab_cicd.md)
+* [Gitlab-runner(待整理)](./devops/gitlab_runner.md)
 * [Jenkins(待整理)](./devops/jenkins.md)
 <!-- * [Harbor]() -->
 <!-- * [kubesphere]() -->
