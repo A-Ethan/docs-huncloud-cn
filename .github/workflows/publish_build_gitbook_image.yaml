@@ -36,8 +36,8 @@ jobs:
     #     # 貌似和gitlab-ci不同，需要clone
     #     args: git clone https://github.com/A-Ethan/docs-huncloud-cn.git
     # cd 
-    - name: cd ./docs-huncloud-cn
-      run: cd ./docs-huncloud-cn
+    # - name: cd ./docs-huncloud-cn
+    #   run: cd ./docs-huncloud-cn
     - name: pwd
       run: pwd
     # gitbook install & build
