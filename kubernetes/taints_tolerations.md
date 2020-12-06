@@ -135,11 +135,11 @@ In case a node is to be evicted, the node controller or the kubelet adds relevan
 with `NoExecute` effect. If the fault condition returns to normal the kubelet or node
 controller can remove the relevant taint(s).
 
-{{< note >}}
-The control plane limits the rate of adding node new taints to nodes. This rate limiting
-manages the number of evictions that are triggered when many nodes become unreachable at
-once (for example: if there is a network disruption).
-{{< /note >}}
+
+> The control plane limits the rate of adding node new taints to nodes. This rate limiting
+> manages the number of evictions that are triggered when many nodes become unreachable at
+> once (for example: if there is a network disruption).
+
 
 You can specify `tolerationSeconds` for a Pod to define how long that Pod stays bound
 to a failing or unresponsive Node.
@@ -157,15 +157,11 @@ tolerations:
   tolerationSeconds: 6000
 ```
 
-{{< note >}}
-Kubernetes automatically adds a toleration for
-`node.kubernetes.io/not-ready` and `node.kubernetes.io/unreachable`
-with `tolerationSeconds=300`,
-unless you, or a controller, set those tolerations explicitly.
-
-These automatically-added tolerations mean that Pods remain bound to
+> Kubernetes automatically adds a toleration for `node.kubernetes.io/not-ready` and `node.kubernetes.io/unreachable` with `tolerationSeconds=300`,unless you, or a controller, set those tolerations explicitly.
+>
+> These automatically-added tolerations mean that Pods remain bound to
 Nodes for 5 minutes after one of these problems is detected.
-{{< /note >}}
+
 
 [DaemonSet](/docs/concepts/workloads/controllers/daemonset/) pods are created with
 `NoExecute` tolerations for the following taints with no `tolerationSeconds`:
