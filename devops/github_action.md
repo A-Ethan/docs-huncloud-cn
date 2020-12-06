@@ -33,18 +33,20 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 10.x
+    # git clone
+    # - uses: srt32/git-actions@v0.0.3
+    #   with:
+    #     # git clone 
+    #     # 貌似和gitlab-ci不同，需要clone
+    #     args: git clone https://github.com/A-Ethan/docs-huncloud-cn.git
+    # cd 
+    # - name: cd ./docs-huncloud-cn
+    #   run: cd ./docs-huncloud-cn
+    # - name: pwd
+    #   run: pwd
     # npm install gitbook
     - name: npm install gitbook
       run: npm install -g gitbook-cli
-    # git clone
-    - uses: srt32/git-actions@v0.0.3
-      with:
-        # git clone 
-        # 貌似和gitlab-ci不同，需要clone
-        args: git clone https://github.com/A-Ethan/docs-huncloud-cn.git
-    # cd 
-    - name: cd ./docs-huncloud-cn
-      run: cd ./docs-huncloud-cn
     # gitbook install & build
     - name: gitbook install
       run: gitbook install
