@@ -1,18 +1,34 @@
 # 污点、容忍污点
-https://mp.weixin.qq.com/s?__biz=Mzg3ODAzMTMyNQ==&mid=2247488004&idx=1&sn=f796ed20678c162d278d069565ea5788&chksm=cf18aab6f86f23a0a6b65aa20161e997b71e48a6761d0e4bf5af4b7e08bd603093074ee74b1b&mpshare=1&scene=1&srcid=1202TEQf5zNR1UhmxjHq1SFC&sharer_sharetime=1606904795703&sharer_shareid=2e51f02d22f752038d1b66400ead27fa&key=df73985cdb2a2cbc74d3feea06046153e9efc19ebbf67f3b501fc8c506b77971b367b8ac4d8743ab97d451da60a1cb5d197b4a4bc5ce67b0c200255a0f82b26be5cac058efb8a71cf57ddbc06cc7bd02d356150ea004ade35052dae0499bb0ed42e809dbe66ed5a6e03564a83f393ded616a60c5d8c5b441ae82af425ae2c731&ascene=1&uin=MjkyMjQ1NDA2MA%3D%3D&devicetype=Windows+10+x64&version=6300002f&lang=zh_CN&exportkey=AZoJ0f3GKvExEN8DN00%2F2CI%3D&pass_ticket=QWLKYbIesPzLAxLPHxyQjRwed%2F%2F4%2FsK5POWropMLu8W8l%2B5%2BWpK9Xu0WO%2FtQIu%2F%2B&wx_header=0
 
-https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/
-
-> 可以配合selector和affinity使用，取交集可用节点
+> 可以配合selector和affinity使用，取交集可用节点。
+>
+> 3个taint，2个toleration匹配不了。
+> 
+> 常用于**专用节点**、**特殊硬件节点**、**基于污点的驱逐**(有空试试)。
 
 ## 污点
 
 给节点增加污点，必须容忍污点才能调度到该节点
 
+```bash
+# 添加污点
+kubectl taint node node1 key1=value1:NoSchedule
+# 删除污点
+kubectl taint node node1 key1=value1:NoSchedule-
+# 添加一组节点污点
+kubectl taint node -l node=label key1=value1:NoSchedule
+# 无value添加
+kubectl taint node node1 key1:NoSchedule
 ```
-kubectl taint nodes node1 key1=value1:NoSchedule
-```
+### effect枚举值
+
+* NoSchedule 不调度
+* PreferNoSchedule  最好不调度
+* NoExecute  不执行（驱逐已有且不符合的pod）
+
 ## 容忍污点
+
+存在，不用指定value
 
 ```yaml
 apiVersion: apps/v1
@@ -42,15 +58,119 @@ spec:
         - name: http
           containerPort: 80
       tolerations:
-      - key: "example-key"
+      - key: "key1"
         operator: "Exists"  # 存在，不用指定value
         effect: "NoSchedule"
 ```
 
+相等，需要指定value 
+
 ```yaml
       tolerations:
-      - key: "example-key"
+      - key: "key1"
         operator: "Equal"  # 相等，需要指定value 
         value: "value1"
         effect: "NoSchedule"
 ```
+
+## 有空试试系列
+
+### 官网例子
+
+> **Note:**
+> There are two special cases:
+>
+> An empty `key` with operator `Exists` matches all keys, values and effects which means this will tolerate everything.
+>
+> An empty `effect` matches all effects with key `key1`.
+
+我觉得这么写，有空试一试
+
+```yaml
+# An empty `key` with operator `Exists` matches all keys, values and effects which means this will tolerate everything.
+      tolerations:
+      - operator: "Exists"
+        effect: "NoSchedule"
+```
+
+```yaml
+# An empty `effect` matches all effects with key key1.
+      tolerations:
+      - key: "key1"
+        operator: "Exists"
+```
+
+
+### 基于污点的驱逐
+
+[v1.18 [stable]有空试试](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/#taint-based-evictions)
+
+The `NoExecute` taint effect, mentioned above, affects pods that are already
+running on the node as follows
+
+ * pods that do not tolerate the taint are evicted immediately
+ * pods that tolerate the taint without specifying `tolerationSeconds` in
+   their toleration specification remain bound forever
+ * pods that tolerate the taint with a specified `tolerationSeconds` remain
+   bound for the specified amount of time
+
+The node controller automatically taints a Node when certain conditions
+are true. The following taints are built in:
+
+ * `node.kubernetes.io/not-ready`: Node is not ready. This corresponds to
+   the NodeCondition `Ready` being "`False`".
+ * `node.kubernetes.io/unreachable`: Node is unreachable from the node
+   controller. This corresponds to the NodeCondition `Ready` being "`Unknown`".
+ * `node.kubernetes.io/out-of-disk`: Node becomes out of disk.
+ * `node.kubernetes.io/memory-pressure`: Node has memory pressure.
+ * `node.kubernetes.io/disk-pressure`: Node has disk pressure.
+ * `node.kubernetes.io/network-unavailable`: Node's network is unavailable.
+ * `node.kubernetes.io/unschedulable`: Node is unschedulable.
+ * `node.cloudprovider.kubernetes.io/uninitialized`: When the kubelet is started
+    with "external" cloud provider, this taint is set on a node to mark it
+    as unusable. After a controller from the cloud-controller-manager initializes
+    this node, the kubelet removes this taint.
+
+In case a node is to be evicted, the node controller or the kubelet adds relevant taints
+with `NoExecute` effect. If the fault condition returns to normal the kubelet or node
+controller can remove the relevant taint(s).
+
+{{< note >}}
+The control plane limits the rate of adding node new taints to nodes. This rate limiting
+manages the number of evictions that are triggered when many nodes become unreachable at
+once (for example: if there is a network disruption).
+{{< /note >}}
+
+You can specify `tolerationSeconds` for a Pod to define how long that Pod stays bound
+to a failing or unresponsive Node.
+
+For example, you might want to keep an application with a lot of local state
+bound to node for a long time in the event of network partition, hoping
+that the partition will recover and thus the pod eviction can be avoided.
+The toleration you set for that Pod might look like:
+
+```yaml
+tolerations:
+- key: "node.kubernetes.io/unreachable"
+  operator: "Exists"
+  effect: "NoExecute"
+  tolerationSeconds: 6000
+```
+
+{{< note >}}
+Kubernetes automatically adds a toleration for
+`node.kubernetes.io/not-ready` and `node.kubernetes.io/unreachable`
+with `tolerationSeconds=300`,
+unless you, or a controller, set those tolerations explicitly.
+
+These automatically-added tolerations mean that Pods remain bound to
+Nodes for 5 minutes after one of these problems is detected.
+{{< /note >}}
+
+[DaemonSet](/docs/concepts/workloads/controllers/daemonset/) pods are created with
+`NoExecute` tolerations for the following taints with no `tolerationSeconds`:
+
+  * `node.kubernetes.io/unreachable`
+  * `node.kubernetes.io/not-ready`
+
+This ensures that DaemonSet pods are never evicted due to these problems.

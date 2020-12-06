@@ -14,14 +14,17 @@
 <!-- * [kubesphere]() -->
 <!-- * [openshift]() -->
 
-## Docker
 
-* [Docker环境](./docker/install_docker.md)
-* [CentOS 7.8 ssh](./docker/centos_7.8_ssh.md)
-* [Golang](./docker/golang.md)
-* [Python(待整理)](./docker/python.md)
-* [Java](./docker/java.md)
-* [多进程容器镜像](./docker/multi_process.md)
+
+## Container
+
+* [Docker环境](./container/install_docker.md)
+* [Containerd环境(还没玩明白)](./container/containerd.md)
+* [CentOS 7.8 ssh](./container/centos_7.8_ssh.md)
+* [Golang](./container/golang.md)
+* [Python(待整理)](./container/python.md)
+* [Java](./container/java.md)
+* [多进程容器镜像](./container/multi_process.md)
 
 ## Kubernetes
 
@@ -41,5 +44,5 @@
 * [CKA考试(待整理)](./kubernetes/cka.md)
 * [kubectl常用命令(待整理)](./kubernetes/kubectl_common.md)
 * [驱逐、禁用、恢复节点(待整理)](./kubernetes/drain_cordon.md)
-* [污点、容忍污点(待整理)](./kubernetes/taints_tolerations.md)
+* [污点、容忍污点](./kubernetes/taints_tolerations.md)
 * [helm常用命令(待整理)](./kubernetes/helm.md)
