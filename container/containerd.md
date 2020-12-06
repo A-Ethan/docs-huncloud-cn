@@ -1,5 +1,5 @@
 # Containerd（还没玩明白）
-
+https://kubernetes.io/zh/docs/setup/production-environment/container-runtimes/
 学会接受，学会享受。ps：新手还是推荐docker呀。
 
 > centos8.2 
